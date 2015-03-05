@@ -8,3 +8,6 @@ meteor-platform
 autopublish
 insecure
 mizzao:bootstrap-3
+accounts-base
+accounts-password
+accounts-ui
