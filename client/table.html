@@ -6,14 +6,16 @@
 			<th>Name</th>
 			<th>Options</th>
 		</tr>
+		{{#each links}}
 		<tr>
-			<td></td>
-			<td></td>
+			<td>{{url}}</td>
+			<td>{{tag}}</td>
 			<td>
 			<a href="" class="glyphicon glyphicon-pencil"></a>
 			<a href="" class="glyphicon glyphicon-trash"></a>
 			</td>
 		</tr>
+			{{/each}}
 	</tbody>
 
 
