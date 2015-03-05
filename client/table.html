@@ -8,10 +8,15 @@
 		</tr>
 		{{#each links}}
 		<tr>
+		{{#if sEdit}}
+<td><input type="text" name="url" placeholder="Type URL here" value="{{url}}" /></td>
+<td><input type="text" name="tag" placeholder="Type Tags here" value="{{tag}}" /><input class="btnUpdate" value="Update"></td>
+		{{else}}
 			<td>{{url}}</td>
 			<td>{{tag}}</td>
+		{{/if}}
 			<td>
-			<a class="glyphicon glyphicon-pencil"></a>
+			<a class="glyphicon glyphicon-pencil edit"></a>
 			<a class="glyphicon glyphicon-trash remove"></a>
 			</td>
 		</tr>
