@@ -1,17 +1,20 @@
-urlCollection = new Mongo.Collection('urlCollection');
+Links = new Mongo.Collection('links');
 
 if (Meteor.isClient) {
-  Template.taddTableForm.events({
-    'submit form': function (e) {
-      e.preventDefault();
+  Template.tAddTableForm.events({
+    'submit form': function (evt) {
+      evt.preventDefault();
       
-      var urlForm = event.target.url.value;
-      var tagForm = event.target.tag.value;
+      var urlForm = evt.target.url.value;
+      var tagForm = evt.target.tag.value;
       
-      urlCollection.insert({
+      Links.insert({
         url : urlForm,
         tag : tagForm
       });
+
+      evt.target.url.value = "";
+      evt.target.tag.value = "";
     }
   });
 }
