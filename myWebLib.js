@@ -1,19 +1,17 @@
 urlCollection = new Mongo.Collection('urlCollection');
 
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
+  Template.taddTableForm.events({
+    'submit form': function (e) {
+      e.preventDefault();
+      
+      var urlForm = event.target.url.value;
+      var tagForm = event.target.tag.value;
+      
+      urlCollection.insert({
+        url : urlForm,
+        tag : tagForm
+      });
     }
   });
 }
