@@ -3,15 +3,10 @@ Template.tTable.helpers({
     return Links.find();
   },
 
-
   sEdit : function() {
   	return Session.get('sEdit');
   }
 
-
-  sEdit: function() {
-    return Session.get('sEdit');
-  }
 });
 
 Template.tTable.events({
@@ -24,15 +19,7 @@ Template.tTable.events({
   },
 
   'click .btnUpdate' : function() {
-  	Link.update({this._id})
+  	Link.update({this._id});
   	Session.set('sEdit', false);
-  'click .edit': function() {
-    Session.set('sEdit', true);
-  },
-  'click .btnUpdate': function(evt) {
-    var urlForm = evt.target.url.value;
-    var tagForm = evt.target.tag.value;
-    Links.update(this._id, {url: urlForm, tag: tagForm});
-    Session.set('sEdit', false);
   }
 });
